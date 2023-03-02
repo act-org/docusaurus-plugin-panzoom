@@ -1,0 +1,26 @@
+{
+  "name": "@actinc/docusaurus-plugin-panzoom",
+  "version": "1.0.0",
+  "description": "A plugin to enable the panzoom component on SVG and other elements",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Docusaurus",
+    "Plugin",
+    "PanZoom"
+  ],
+  "author": "Justin Watkins",
+  "license": "ISC",
+  "dependencies": {
+    "@docusaurus/utils-validation": "^2.3.1",
+    "@panzoom/panzoom": "^4.5.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@docusaurus/types": "^2.3.1",
+    "@tsconfig/docusaurus": "^1.0.6"
+  }
+}
