@@ -5,7 +5,7 @@ import { PanZoomPluginOptions } from "./PanzoomPluginOptions";
 const config = require('@generated/docusaurus.config').default;
 const { themeConfig } = config;
 const { zoom }: { zoom: PanZoomPluginOptions } = themeConfig;
-const { selectors = ['div.mermaid[data-processed="true"]', '.drawio'], wrap = true, timeout = 1000, ...panZoomConfig } = zoom;
+const { selectors = ['div.mermaid[data-processed="true"]', 'div.docusaurus-mermaid-container', '.drawio'], wrap = true, timeout = 1000, ...panZoomConfig } = zoom;
 
 /**
  * Main work method to zoom the set of elements.  You can pass in global options to the pan zoom component
