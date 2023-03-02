@@ -4,23 +4,66 @@
   "description": "A plugin to enable the panzoom component on SVG and other elements",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "Docusaurus",
     "Plugin",
     "PanZoom"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Justin Watkins",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@docusaurus/utils-validation": "^2.3.1",
-    "@panzoom/panzoom": "^4.5.1",
-    "typescript": "^4.9.5"
+    "@panzoom/panzoom": "^4.5.1"
   },
   "devDependencies": {
     "@docusaurus/types": "^2.3.1",
-    "@tsconfig/docusaurus": "^1.0.6"
-  }
+    "@tsconfig/docusaurus": "^1.0.6",
+    "semantic-release": "^20.1.1",
+    "typescript": "^4.9.5"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md",
+          "changeLogTitle": "# Changelog"
+        }
+      ],
+      "@semantic-release/npm",
+      "@semantic-release/github",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ],
+    "repositoryUrl": "git@github.com:act-org/docusaurus-plugin-panzoom.git",
+    "branches": [
+      {
+        "name": "main",
+        "prerelease": false
+      },
+      {
+        "name": "next",
+        "prerelease": true
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/act-org/docusaurus-plugin-panzoom.git"
+  },
+  "sideEffects": false
 }
